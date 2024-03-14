@@ -84,6 +84,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((auth) -> auth
                         .requestMatchers("/login", "/", "/join", "/error").permitAll()
                         .requestMatchers("/admin").hasRole("ADMIN_ROLE")
+                        .requestMatchers("/reissue").permitAll()
                         .anyRequest().authenticated());
 
         /*
@@ -116,3 +117,6 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
+// eyJhbGciOiJIUzI1NiJ9.eyJjYXRlZ29yeSI6InJlZnJlc2giLCJ1c2VybmFtZSI6InNzYWZ5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzEwMzk3MzMwLCJleHAiOjE3MTA0ODM3MzB9.iaFkcLyIZkLsv5ErPrxRL3oUTNqbLWKBfcXhhPgJEjc
+// eyJhbGciOiJIUzI1NiJ9.eyJjYXRlZ29yeSI6InJlZnJlc2giLCJ1c2VybmFtZSI6InNzYWZ5Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzEwMzk3MzQ5LCJleHAiOjE3MTA0ODM3NDl9.jX2GDOqq-0eFCf0ThFyTyqJAWTjGHQUErNgWEfB25KM
